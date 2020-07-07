@@ -1,0 +1,7 @@
+
+body{
+    background-image: url(https://cdn.pixabay.com/photo/2015/01/07/16/37/wood-591631_960_720.jpg);
+}
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }

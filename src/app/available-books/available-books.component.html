@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+<h1 style="text-align: center;">Available Books[{{datas['count']}}]</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr scope="row text-center">
+            <th scope="col-xl-1">S.No</th>
+            <th scope="col-xl-2">Title</th>
+            <th scope="col-xl-2">Author</th>
+            <th scope="col-xl-2">ISBN</th>
+            <th scope="col-xl-5">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of datas['data'] ; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{data['title']}}</td>
+            <td>{{data['author']}}</td>
+            <td>{{data['isbn']}}</td>
+            <td><button type="button" class="btn btn-outline-success" style="margin: 2px;"
+                (click)='editBook(data)'>Edit</button>
+                <button type="button" class="btn btn-outline-danger" style="margin: 2px;"
+                (click)='deleteBook(data["isbn"])'>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- Modal -->
+<!-- <form [formGroup]="editForm" (ngSubmit)="display()"> -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="exampleModalLabel">{{formTitle}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]='editForm'>
+                    <div class="row">
+                        <div class="col">
+                            <label for="exampleInputEmail1">ISBN</label>
+                            <input type="text" class="form-control" disabled formControlName='Isbn' >
+                        </div>
+                        <div class="col">
+                            <label for="exampleInputEmail1">BOOK</label>
+                            <input type="text" class="form-control" formControlName='Title'>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 1rem;">
+                        <div class="col">
+                            <label for="exampleInputEmail1">AUTHOR</label>
+                            <input type="text" class="form-control" formControlName='Author'>
+                        </div>
+                        <div class="col">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label><br>
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-top: 10px;
+                            margin-left: 1px;
+                            width: 30px;
+                            height: 30px;" formControlName='IsActive'>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)='updateBook()'>Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

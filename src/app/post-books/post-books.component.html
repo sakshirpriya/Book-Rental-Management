@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<h1> POST BOOKS </h1>
+<form [formGroup]="userForm" (ngSubmit)="postData()">
+  <div class="form-group">
+    <div class="input-group">
+        <input type="text" name="name" class="formStyle"formControlName="Title" placeholder="Title (required)" required />   
+    </div>
+</div>
+<div class="form-group">
+    <div class="input-group">
+        <input type="text" name="name" class="formStyle"  formControlName="ISBN" placeholder="ISBN (required)" required />
+    </div>
+</div>
+<div class="form-group">
+    <div class="input-group">
+        <input type="text" name="name" class="formStyle" formControlName="Author" placeholder="Author (required)" required />
+    </div>
+</div>
+<div style="text-align: center;">
+   <button class="formButton">Submit</button> 
+  </div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="div1">
+    <form [formGroup]="postForm" (ngSubmit)="postData()">
+      <div class="form-group">
+      <div class="input-group">
+      <input type="text" name="name" class="formStyle" placeholder="Title (required)" required />
+      <input type="text" name="name" class="formStyle" placeholder="ISBN (required)" required />
+      <input type="text" name="name" class="formStyle" placeholder="Author (required)" required />
+      <div style="text-align: center;">
+      <a href="#" class="formButton">Submit</a>
+    </div>
+</div>
+    </div>
+    </form>
+  </div> -->
+
+<app-footer></app-footer>
+
