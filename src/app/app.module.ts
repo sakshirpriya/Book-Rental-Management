@@ -16,6 +16,9 @@ import { HttpCallsService } from './http-calls.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PostBooksComponent } from './post-books/post-books.component';
 import { AvailableBooksComponent } from './available-books/available-books.component';
+import { ReturnBooksComponent } from './return-books/return-books.component';
+import { IssueBookComponent } from './issue-book/issue-book.component';
+import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,9 @@ import { AvailableBooksComponent } from './available-books/available-books.compo
     NavbarComponent,
     ContactUsComponent,
     PostBooksComponent,
-    AvailableBooksComponent
+    AvailableBooksComponent,
+    ReturnBooksComponent,
+    IssueBookComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,8 @@ import { AvailableBooksComponent } from './available-books/available-books.compo
     HttpClientModule
   ],
   providers: [
-    HttpCallsService
+    HttpCallsService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

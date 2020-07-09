@@ -51,4 +51,8 @@ export class HttpCallsService {
   deleteBook(isbn){
     return this.http.delete(`http://192.168.0.144:3000/api/book/deleteBook/${isbn}`,this.createHttpOption())
   }
+  issueBook(body)
+  {
+    return this.http.post('http://192.168.0.144:3000/api/rental/issueBook',body,this.createHttpOption())
+  }
 }
