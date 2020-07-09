@@ -7,22 +7,28 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#" *ngIf="isLogin">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="available/books"  tabindex="-1">Available Books</a>
+        <a class="nav-link" href="available/books" *ngIf="isLogin"  tabindex="-1">Available Books</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" tabindex="-1">Rent Books</a>
+        <a class="nav-link" href="issuebooks" *ngIf="isLogin" tabindex="-1">Issue Books</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/postbooks" tabindex="-1">Post Books</a>
+        <a class="nav-link" href="/postbooks" *ngIf="isLogin" tabindex="-1">Post Books </a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> -->
+    <!-- <i class="fas fa-sign-in-alt fa-5x"></i> -->
+    
+ 
+    <a (click)='logout()' *ngIf="isLogin"><i class="fas fa-sign-in-alt fa-2x" style="padding: 10px;cursor: pointer;"></i></a>
+   <a href="/login" *ngIf="!isLogin"><i class="fas fa-sign-in-alt fa-2x" style="padding: 10px;"></i></a>
+    <a href="/signup" *ngIf="!isLogin"><i class="fas fa-user-plus fa-2x" style="padding: 10px;"></i></a>
   </div>
   </nav>
  <!-- <img src="https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_960_720.jpg" width="100%" height="100%"> -->
